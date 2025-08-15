@@ -8,6 +8,9 @@ var characterReplacement = function(s, k) {
     let counter = 0;
 
     while (point < s.length) {
+        if (maxSubsequents === s.length) {
+            return maxSubsequents;
+        }
         if (movingPoint >= s.length || movesUsed > k) {
             if (movesUsed < k && point > 0) {
                 counter += k - movesUsed < point ? k - movesUsed : point;
